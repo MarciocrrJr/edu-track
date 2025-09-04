@@ -20,9 +20,11 @@
  * {success: true, message: 'Valor salvo com sucesso'}
 **/
 export function save(key, value) {
+    // Validação do Tipo de Identificador
     if(key.trim() === '') {
         throw new Error('Identificador inválido.');
     }
+    // Verifica se o valor é vazio
     if(value === undefined) {
         throw new Error('Valor inválido.')
     }
@@ -55,12 +57,15 @@ export function save(key, value) {
  * // { success: true, data: 'Victor' }
  */
 export function get(key) {
+    // Validação do Tipo de valor
     if (typeof key !== 'string' || key.trim() === '') {
         throw new Error('Identificador inválido.');
     }
 
+    // Busca os valores
     const storage = localStorage.getItem(key);
 
+    // Verifica o tamanho do valor buscado, se for menor ou igual a 0, retorna um erro
     if (storage === null || storage.length === 0) {
         throw new Error('Nenhum valor encontrado.');
     }
@@ -68,6 +73,7 @@ export function get(key) {
     // Converte JSON para valor original
     const data = JSON.parse(storage);
 
+    // Retorno
     return { success: true, data };
 }
 
