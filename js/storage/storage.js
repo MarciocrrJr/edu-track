@@ -43,7 +43,9 @@ export function save(key, value) {
  * Busca um valor do LocalStorage pelo identificador
  * 
  * Recebe um identificador
- * 
+ * @author victor <victor242206@gmail.com>
+ * @version 1.0.0
+ * @since 1.0.0 (04/09/2025)
  * @param {string} key - Identificador do valor a ser buscado
  * @returns {{ success: boolean, data: any }} Status da operação e valor encontrado
  * @throws {Error} Caso a chave seja inválida ou não exista valor
